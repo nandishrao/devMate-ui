@@ -10,15 +10,15 @@ const NavBar = () => {
       </div>
       <div className="flex gap-2">
         {user && (
-          <div className="dropdown dropdown-end mx-7">
-            <p>Welcome {user.firstName}</p>
+          <div className="dropdown dropdown-end mx-7 flex ">
+            <p className="mr-4 pt-2 ">Welcome,{user.firstName}</p>
             <div
               tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle avatar"
             >
               <div className="w-10 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
+                <img alt="Tailwind CSS Navbar component"  src={user.photoURL} />
               </div>
             </div>
             <ul
