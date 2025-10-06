@@ -3,17 +3,17 @@ import Body from "./Components/Body";
 import Login from "./Components/Login";
 import { Provider } from "react-redux";
 import appStore from "./utils/AppStore";
+import Feed from "./Components/Feed";
 function App() {
   return (
   <Provider store={appStore}>
     <BrowserRouter basename="/">
       <Routes>
         <Route path="/" element={<Body />}>
+          <Route path="/" element={<Feed/>} />
           <Route path="/login" element={<Login/>} />
-          <Route path="/signup" element={<div>signup</div>} />
-          <Route path="/login" element={<div>login</div>} />
         </Route>
-      </Routes>
+      </Routes> 
     </BrowserRouter>
      </Provider>
   );

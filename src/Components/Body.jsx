@@ -8,7 +8,6 @@ const Body = () => {
     <NavBar/>
     <Outlet/>
     {/* <Footer/> */}
-     {/*Any childrens of the body will render here*/}
     </div>
     
   );
