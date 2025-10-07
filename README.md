@@ -18,3 +18,8 @@
 } using axios withiut these the cookies will not be available from the server 
 
 - install redux-toolkit
+
+
+-When the page is refreshed the reduc store is refreshed so the user is getting logged out
+ but the token recieved to th browser from the token is still available
+ 

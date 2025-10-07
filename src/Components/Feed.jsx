@@ -1,7 +1,7 @@
 const Feed=()=>{
     return (
         <div>
-            feeed
+            feed
         </div>
     )
 }
