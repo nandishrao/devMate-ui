@@ -33,7 +33,6 @@ const Login = () => {
       navigate("/");
     } catch (err) {
       setError(err.response.data)
-      console.log(err.message);
     }
   };
   return (
