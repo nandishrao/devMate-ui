@@ -3,7 +3,7 @@ import { BASE_URL } from "../Constants/constants";
 import { useEffect } from "react";
 import axios from "axios";
 import { addFeed } from "../utils/feedSlice";
-import FeedCard from "./FeedCard";
+import UserCard from "./UserCard";
 
 const Feed = () => {
   const feed = useSelector((store) => store.feed);
@@ -14,18 +14,19 @@ const Feed = () => {
       const res = await axios.get(BASE_URL + "/feed", {
         withCredentials: true,
       });
-      const feedData= await res.data
+      const feedData = await res.data;
       dispatch(addFeed(feedData));
-      
-    } catch (err) {
-      
-    }
+    } catch (err) {}
   };
   useEffect(() => {
     getFeed();
   }, []);
   return (
-   feed && <div className="flex justify-center"><FeedCard user={feed[1]}/></div>
-  )
+    feed && (
+      <div className="flex justify-center">
+        <UserCard user={feed[1]} />
+      </div>
+    )
+  );
 };
 export default Feed;

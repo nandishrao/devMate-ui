@@ -32,7 +32,7 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/");
     } catch (err) {
-      setError(err.response.data)
+      setError(err.response)
     }
   };
   return (
