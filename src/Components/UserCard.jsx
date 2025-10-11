@@ -1,5 +1,9 @@
 const UserCard = ({ user }) => {
   const { _id, firstName, lastName, photoURL, age, gender, about } = user;
+
+    // const HandelRequest = async(req, res)=>{
+    //   const res = await axios.
+    // }
   return (
     <div className="card w-72 h-[60%] bg-base-200 shadow-lg shadow-white/10 hover:shadow-white/20 transition-shadow duration-300 border border-white/10 rounded-2xl overflow-hidden">
       <figure className="h-48 bg-base-300">
