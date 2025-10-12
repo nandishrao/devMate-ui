@@ -1,9 +1,21 @@
-const UserCard = ({ user }) => {
-  const { _id, firstName, lastName, photoURL, age, gender, about } = user;
+import axios from "axios";
+import { BASE_URL } from "../Constants/constants";
+import { useDispatch } from "react-redux";
+import { removeFeed } from "../utils/feedSlice";
 
-    // const HandelRequest = async(req, res)=>{
-    //   const res = await axios.
-    // }
+const UserCard = ({ user }) => {
+  const dispatch = useDispatch();
+  const { _id, firstName, lastName, photoURL, age, gender, about } = user;
+  const handelSendRequests = async (status, userId) => {
+    const res = axios.post(
+      BASE_URL + "/request/send/" + status + "/" + userId,
+      {},
+      {
+        withCredentials: true,
+      }
+    );
+    dispatch(removeFeed(userId));
+  };
   return (
     <div className="card w-72 h-[60%] bg-base-200 shadow-lg shadow-white/10 hover:shadow-white/20 transition-shadow duration-300 border border-white/10 rounded-2xl overflow-hidden">
       <figure className="h-48 bg-base-300">
@@ -33,12 +45,14 @@ const UserCard = ({ user }) => {
           <button
             type="button"
             className="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            onClick={() => handelSendRequests("ignored", _id)}
           >
             Ignore
           </button>
           <button
             type="button"
             className="text-white bg-gradient-to-r from-green-400 via-green-500 to-green-600 hover:bg-gradient-to-br  shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+            onClick={() => handelSendRequests("interested", _id)}
           >
             Interested
           </button>

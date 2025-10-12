@@ -25,15 +25,12 @@ const Requests = () => {
     dispatch(addRequests(res.data.connectionRequest));
   };
   useEffect(() => {
-    if (requests) return;
     fetchRequests();
   }, []);
-  if (!requests)
-    return (
-      <div className="font-bold text-xl text-center">
-        No Connection Requests
-      </div>
-    );
+ if (!requests) return;
+
+  if (requests.length === 0)
+    return <h1 className="flex justify-center my-10 font-bold"> No Requests Found</h1>;
   return (
     <>
       <div className="font-bold text-xl text-center">Connection Requests</div>
