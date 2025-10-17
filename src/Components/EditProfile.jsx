@@ -43,18 +43,17 @@ const EditProfile = ({ user }) => {
 
   return (
     <>
-     {showToast && (
-          <div className="toast toast-top toast-center">
+      {showToast && (
+        <div className="toast toast-top toast-center">
           <div className="alert alert-success">
             <span>Profile saved successfully.</span>
           </div>
         </div>
       )}
-      <div className="flex justify-center-safe pt-10">
-        <div>
+      <div className="flex justify-center-safe ">
+        <div className="">
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 mr-10">
             <legend className="fieldset-legend">Edit Profile</legend>
-
             <label type="text" className="label">
               First Name
             </label>
@@ -115,7 +114,6 @@ const EditProfile = ({ user }) => {
           user={{ firstName, lastName, gender, about, age, photoURL }}
         />
       </div>
-     
     </>
   );
 };
