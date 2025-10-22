@@ -67,78 +67,82 @@ const Login = () => {
   };
 
   return (
-    <>
-      {showToast && (
-        <div className="toast toast-top toast-center">
-          <div className="alert alert-success">
-            <span>Sign In Successfully</span>
-          </div>
-        </div>
-      )}
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 ml-[38%]">
-        <legend className="fieldset-legend">
-          {login ? "Sign In" : "Login"}
-        </legend>
+   <>
+  {showToast && (
+    <div className="toast toast-top toast-center">
+      <div className="alert alert-success">
+        <span>Sign In Successfully</span>
+      </div>
+    </div>
+  )}
 
-        {login && (
-          <>
-            <label type="text" className="label">
-              Fist Name
-            </label>
-            <input
-              type="text"
-              className="input"
-              placeholder="Enter First Name"
-              value={firstName}
-              onChange={(e) => setfirstName(e.target.value)}
-            />
-            <label type="text" className="label">
-              Last Name
-            </label>
-            <input
-              type="text"
-              className="input"
-              placeholder="Enter Last Name"
-              value={lastName}
-              onChange={(e) => setlastName(e.target.value)}
-            />
-          </>
-        )}
+  <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-6 w-[90%] sm:w-[70%] md:w-[50%] lg:w-[35%] xl:w-[30%] mx-auto mt-10 shadow-lg">
+    <legend className="fieldset-legend text-center text-lg font-semibold">
+      {login ? "Sign In" : "Login"}
+    </legend>
 
-        <label type="text" className="label">
-          {login ? "Enter new mail" : "Enter mail"}
-        </label>
+    {login && (
+      <>
+        <label className="label text-sm sm:text-base">First Name</label>
         <input
-          type="email"
-          className="input"
-          placeholder="Email"
-          value={emailId}
-          onChange={(e) => setEmail(e.target.value)}
+          type="text"
+          className="input input-bordered w-full"
+          placeholder="Enter First Name"
+          value={firstName}
+          onChange={(e) => setfirstName(e.target.value)}
         />
 
-        <label className="label">{login ? "New Password" : "Password"}</label>
+        <label className="label text-sm sm:text-base">Last Name</label>
         <input
-          type="password"
-          className="input"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          className="input input-bordered w-full"
+          placeholder="Enter Last Name"
+          value={lastName}
+          onChange={(e) => setlastName(e.target.value)}
         />
-        <p className="text-red-700 font-bold">{error}</p>
-        <button
-          onClick={login ? handelSignUp : HandelLogin}
-          className="btn btn-neutral mt-4"
-        >
-          {login ? "Sign Up" : "Login"}
-        </button>
-        <p
-          onClick={HandelLoginState}
-          className="cursor-pointer fieldset-legend"
-        >
-          {login ? " Already a User? Login" : "New User? Sign UP"}
-        </p>
-      </fieldset>
-    </>
+      </>
+    )}
+
+    <label className="label text-sm sm:text-base">
+      {login ? "Enter new mail" : "Enter mail"}
+    </label>
+    <input
+      type="email"
+      className="input input-bordered w-full"
+      placeholder="Email"
+      value={emailId}
+      onChange={(e) => setEmail(e.target.value)}
+    />
+
+    <label className="label text-sm sm:text-base">
+      {login ? "New Password" : "Password"}
+    </label>
+    <input
+      type="password"
+      className="input input-bordered w-full"
+      placeholder="Password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+    />
+
+    <p className="text-red-700 font-bold text-sm sm:text-base">{error}</p>
+
+    <button
+      onClick={login ? handelSignUp : HandelLogin}
+      className="btn btn-neutral mt-4 w-full sm:w-auto"
+    >
+      {login ? "Sign Up" : "Login"}
+    </button>
+
+    <p
+      onClick={HandelLoginState}
+      className="cursor-pointer fieldset-legend text-center mt-4 text-sm sm:text-base hover:underline"
+    >
+      {login ? "Already a User? Login" : "New User? Sign UP"}
+    </p>
+  </fieldset>
+</>
+
   );
 };
 export default Login;

@@ -25,16 +25,16 @@ const Connections = () => {
   if(!connections) return;
   if(connections.length === 0) return <div className="font-extrabold text-center mt-10  ">No Connections</div>    
   return (
-   <div className="text-center py-8">
-  <h2 className="text-2xl font-extrabold mb-6">Connections</h2>
+  <div className="text-center py-10 px-4 sm:px-6 md:px-10">
+  <h2 className="text-2xl sm:text-3xl font-extrabold mb-8">Connections</h2>
 
-  <div className="flex flex-wrap justify-center gap-6 px-5">
+  <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 sm:gap-8 md:gap-10 pb-6 px-4 scroll-smooth scrollbar-none">
     {connections.map(({ _id, photoURL, firstName, lastName, age, gender, about }) => (
       <div
         key={_id}
-        className="card w-64 bg-base-200 border border-white/10 shadow-lg hover:shadow-white/20 transition-all duration-300 rounded-2xl overflow-hidden"
+        className="snap-center flex-shrink-0 w-[85%] sm:w-[60%] md:w-[45%] lg:w-[30%] xl:w-[25%] mx-auto card bg-base-200 border border-white/10 shadow-lg hover:shadow-white/20 transition-all duration-300 rounded-2xl overflow-hidden"
       >
-        <figure className="relative h-40 bg-base-300">
+        <figure className="relative h-44 sm:h-48 md:h-52 bg-base-300">
           <img
             src={photoURL}
             alt={`${firstName} ${lastName}`}
@@ -42,18 +42,18 @@ const Connections = () => {
           />
         </figure>
 
-        <div className="card-body p-4 text-left">
-          <h2 className="text-lg font-semibold text-white truncate">
+        <div className="card-body p-5 text-left">
+          <h2 className="text-lg sm:text-xl font-semibold text-white truncate">
             {firstName} {lastName}
           </h2>
 
           {age && gender && (
-            <p className="text-sm text-gray-400 font-semibold">
+            <p className="text-sm sm:text-base text-gray-400 font-semibold">
               {age}, {gender}
             </p>
           )}
 
-          <p className="text-sm text-gray-300 mt-2 line-clamp-3">
+          <p className="text-sm sm:text-base text-gray-300 mt-2 line-clamp-3">
             {about || "No description available."}
           </p>
         </div>
