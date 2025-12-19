@@ -27,9 +27,18 @@ const Feed = () => {
     return <h1 className="flex justify-center my-10">No new users founds!</h1>;
   return (
     feed && (
-      <div className="flex justify-center">
-        <UserCard user={feed[0]} />
-      </div> 
+    <div className="flex flex-col items-center">
+  <div className="mb-6">
+    <h2 className="mb-6 text-lg sm:text-xl font-semibold tracking-wide 
+bg-gradient-to-r from-blue-600 via-indigo-500 to-sky-500 
+bg-clip-text text-transparent">
+  Send Connection Request
+</h2>
+  </div>
+
+  <UserCard user={feed[0]} />
+</div>
+
     )
   );
 };

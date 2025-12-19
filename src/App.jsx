@@ -8,6 +8,7 @@ import Profile from "./Components/Profile";
 import Connections from "./Components/Connection";
 import Requests from "./Components/Requests";
 import Premium from "./Components/Premium";
+import PostCard from "./Components/PostCard";
 function App() {
   return (
   <Provider store={appStore}>
@@ -20,6 +21,7 @@ function App() {
               <Route path="/connections" element={<Connections/>} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/premium" element={<Premium/>} />
+              <Route path="/posts" element={<PostCard/>} />
         </Route>
       </Routes> 
     </BrowserRouter>

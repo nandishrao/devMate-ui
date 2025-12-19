@@ -2,7 +2,8 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="fixed bottom-0 left-0 w-full h-34 bg-base-300">
+    <footer className="w-full bg-gradient-to-r from-slate-900 via-indigo-900 to-sky-900">
+
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         {/* Left Section - Project Info */}
         <div className="text-center md:text-left">
@@ -20,7 +21,7 @@ export default function Footer() {
         {/* Middle Section - Links */}
         <div className="flex gap-6 text-lg">
           <a
-            href="https://github.com/yourusername/devmate"
+            href="https://github.com/nandishrao/devmate"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition"

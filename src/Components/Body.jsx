@@ -29,11 +29,25 @@ const Body = () => {
   }, []);
 
   return (
-    <div>
-      <NavBar />
-      <Outlet />
-      {/* <Footer /> */}
-    </div>
+<div className="min-h-screen flex flex-col 
+bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-slate-200">
+
+  <header className="sticky top-0 z-50">
+    <NavBar />
+  </header>
+
+  <main
+    className="flex-1 w-full max-w-7xl mx-auto 
+    px-4 sm:px-6 lg:px-8 py-8 pb-32"
+  >
+    <Outlet />
+  </main>
+
+  <Footer />
+</div>
+
   );
 };
+
+
 export default Body;

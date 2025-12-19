@@ -42,94 +42,175 @@ const EditProfile = ({ user }) => {
   };
 
   return (
-   <>
+ <>
+  {/* Toast */}
   {showToast && (
-    <div className="toast toast-top toast-center">
-      <div className="alert alert-success">
-        <span>Profile saved successfully.</span>
+    <div className="toast toast-top toast-center z-50">
+      <div className="
+        px-4 py-3 rounded-lg
+        bg-gradient-to-r from-indigo-600 to-cyan-500
+        text-white shadow-lg
+      ">
+        Profile saved successfully.
       </div>
     </div>
   )}
 
-  <div className="w-full overflow-x-auto snap-x snap-mandatory flex scroll-smooth scrollbar-none py-2 px-4 gap-6">
-    {/* Slide 1 — Edit Profile Form */}
-    <div className="snap-center flex-shrink-0 w-[90%] sm:w-[80%] md:w-[60%] lg:w-[45%] mx-auto">
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-6 shadow-lg shadow-white/10 hover:shadow-white/20 transition-all duration-300">
-        <legend className="fieldset-legend text-lg sm:text-xl font-semibold mb-2 text-center">
+  {/* Page Wrapper */}
+  <div className="
+    max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10
+    bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-950
+  ">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+
+      {/* Edit Profile Form */}
+      <fieldset className="
+        rounded-2xl p-6
+        bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-950
+        border border-indigo-500/20
+        shadow-lg shadow-blue-900/40
+      ">
+        <legend className="
+          px-4 text-xl font-semibold text-center
+          bg-gradient-to-r from-cyan-400 to-indigo-400
+          bg-clip-text text-transparent
+        ">
           Edit Profile
         </legend>
 
-        <label className="label text-sm sm:text-base">First Name</label>
-        <input
-          type="text"
-          className="input input-bordered w-full"
-          placeholder="First Name"
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-        />
+        <div className="space-y-4 text-blue-100">
 
-        <label className="label text-sm sm:text-base mt-3">Last Name</label>
-        <input
-          type="text"
-          className="input input-bordered w-full"
-          placeholder="Last Name"
-          value={lastName}
-          onChange={(e) => setlastName(e.target.value)}
-        />
+          <div>
+            <label className="block text-sm text-blue-300 mb-1">
+              First Name
+            </label>
+            <input
+              type="text"
+              className="
+                w-full rounded-lg px-3 py-2
+                bg-blue-900/60 text-blue-100
+                border border-indigo-500/30
+                focus:outline-none focus:ring-2 focus:ring-cyan-500
+              "
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+          </div>
 
-        <label className="label text-sm sm:text-base mt-3">About</label>
-        <input
-          type="text"
-          className="input input-bordered w-full"
-          placeholder="About"
-          value={about}
-          onChange={(e) => setabout(e.target.value)}
-        />
+          <div>
+            <label className="block text-sm text-blue-300 mb-1">
+              Last Name
+            </label>
+            <input
+              type="text"
+              className="
+                w-full rounded-lg px-3 py-2
+                bg-blue-900/60 text-blue-100
+                border border-indigo-500/30
+                focus:outline-none focus:ring-2 focus:ring-cyan-500
+              "
+              value={lastName}
+              onChange={(e) => setlastName(e.target.value)}
+            />
+          </div>
 
-        <label className="label text-sm sm:text-base mt-3">Photo URL</label>
-        <input
-          type="text"
-          className="input input-bordered w-full"
-          placeholder="Photo URL"
-          value={photoURL}
-          onChange={(e) => setPhotoURL(e.target.value)}
-        />
+          <div>
+            <label className="block text-sm text-blue-300 mb-1">
+              About
+            </label>
+            <input
+              type="text"
+              className="
+                w-full rounded-lg px-3 py-2
+                bg-blue-900/60 text-blue-100
+                border border-indigo-500/30
+                focus:outline-none focus:ring-2 focus:ring-cyan-500
+              "
+              value={about}
+              onChange={(e) => setabout(e.target.value)}
+            />
+          </div>
 
-        <label className="label text-sm sm:text-base mt-3">Gender</label>
-        <input
-          type="text"
-          className="input input-bordered w-full"
-          placeholder="Gender"
-          value={gender}
-          onChange={(e) => setgender(e.target.value)}
-        />
+          <div>
+            <label className="block text-sm text-blue-300 mb-1">
+              Photo URL
+            </label>
+            <input
+              type="text"
+              className="
+                w-full rounded-lg px-3 py-2
+                bg-blue-900/60 text-blue-100
+                border border-indigo-500/30
+                focus:outline-none focus:ring-2 focus:ring-cyan-500
+              "
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+            />
+          </div>
 
-        <label className="label text-sm sm:text-base mt-3">Age</label>
-        <input
-          type="number"
-          className="input input-bordered w-full"
-          placeholder="Age"
-          value={age}
-          onChange={(e) => setage(e.target.value)}
-        />
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm text-blue-300 mb-1">
+                Gender
+              </label>
+              <input
+                type="text"
+                className="
+                  w-full rounded-lg px-3 py-2
+                  bg-blue-900/60 text-blue-100
+                  border border-indigo-500/30
+                  focus:outline-none focus:ring-2 focus:ring-cyan-500
+                "
+                value={gender}
+                onChange={(e) => setgender(e.target.value)}
+              />
+            </div>
 
-        <button
-          onClick={saveProfile}
-          className="btn btn-neutral mt-6 w-full sm:w-auto"
-        >
-          Save Profile
-        </button>
+            <div>
+              <label className="block text-sm text-blue-300 mb-1">
+                Age
+              </label>
+              <input
+                type="number"
+                className="
+                  w-full rounded-lg px-3 py-2
+                  bg-blue-900/60 text-blue-100
+                  border border-indigo-500/30
+                  focus:outline-none focus:ring-2 focus:ring-cyan-500
+                "
+                value={age}
+                onChange={(e) => setage(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <button
+            onClick={saveProfile}
+            className="
+              w-full mt-4 py-2 rounded-lg font-semibold
+              bg-gradient-to-r from-indigo-600 to-cyan-500
+              text-white
+              hover:from-indigo-500 hover:to-cyan-400
+              shadow-md shadow-cyan-500/30
+              transition
+            "
+          >
+            Save Profile
+          </button>
+        </div>
       </fieldset>
-    </div>
 
-    {/* Slide 2 — User Preview Card */}
-    <div className="snap-center flex-shrink-0 w-[90%] sm:w-[80%] md:w-[60%] lg:w-[35%] mx-auto flex justify-center items-start">
-      <UserCard
-        user={{ firstName, lastName, gender, about, age, photoURL }}
-      />
+      {/* Live Preview */}
+      <div className="flex justify-center">
+        <UserCard
+          user={{ firstName, lastName, gender, about, age, photoURL }}
+        />
+      </div>
+
     </div>
   </div>
 </>
+
 
   );
 };
