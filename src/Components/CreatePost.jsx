@@ -11,7 +11,7 @@ const CreatePost = () => {
     formData.append("image", image);
     formData.append("caption", caption);
 
-    await axios.post(`${BASE_URL}/post`, formData, {
+    await axios.post(BASE_URL + "/post/create", formData, {
       withCredentials: true,
     });
 
