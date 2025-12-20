@@ -3,6 +3,7 @@ import { BASE_URL } from "../Constants/constants";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addConnections } from "../utils/Connectionslice";
+import { Link } from "react-router-dom";
 
 const Connections = () => {
   const dispatch = useDispatch();
@@ -104,14 +105,18 @@ bg-gradient-to-b from-blue-950 via-indigo-950 to-blue-950
                   Connected
                 </span>
 
-                <button className="
+               <Link to ={`/chat/${_id}`} className="
+                  text-xs font-medium
+                  text-blue-300">
+                     <button className="
                   text-sm font-medium
                   text-cyan-300
                   hover:text-cyan-200
                   transition
                 ">
-                  View Profile →
+                  Chat
                 </button>
+                  </Link>
 
               </div>
 
