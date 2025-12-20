@@ -9,6 +9,7 @@ import Connections from "./Components/Connection";
 import Requests from "./Components/Requests";
 import Premium from "./Components/Premium";
 import PostCard from "./Components/PostCard";
+import Chat from "./Components/Chat";
 function App() {
   return (
   <Provider store={appStore}>
@@ -22,6 +23,7 @@ function App() {
               <Route path="/requests" element={<Requests />} />
               <Route path="/premium" element={<Premium/>} />
               <Route path="/posts" element={<PostCard/>} />
+              <Route path="/chat/:toTargetUser" element={<Chat/>} />
         </Route>
       </Routes> 
     </BrowserRouter>
