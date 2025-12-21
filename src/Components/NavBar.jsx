@@ -61,7 +61,6 @@ const NavBar = () => {
           <li>
             <Link to="/profile" className="hover:bg-slate-800">
               Profile
-              <span className="badge badge-info ml-2">New</span>
             </Link>
           </li>
 
@@ -82,8 +81,9 @@ const NavBar = () => {
               to="/premium"
               className="font-semibold text-sky-400 hover:bg-slate-800"
             >
-              👑 Premium
+              👑 Premium <span className="badge badge-info ml-2">New</span>
             </Link>
+            
           </li>
 
           <div className="divider my-1"></div>
@@ -91,7 +91,7 @@ const NavBar = () => {
           <li>
             <button
               onClick={handleLogout}
-              className="text-red-400 hover:bg-red-900/30 font-medium"
+              className="text-red-600  hover:bg-red-900/30 font-bold"
             >
               Logout
             </button>
