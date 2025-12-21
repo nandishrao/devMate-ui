@@ -58,6 +58,7 @@ const Chat = () => {
     });
     setNewMessages("");
   };
+;
   return (
     <div className="h-screen w-full bg-[#0b0f14] flex items-center justify-center px-4">
       <div
@@ -93,39 +94,29 @@ const Chat = () => {
           </div>
         </div>
         <div className="flex-1 overflow-y-auto px-6 py-5 space-y-4">
-          {/* <div className="flex justify-start">
-            <div className="
-              max-w-md px-4 py-3 rounded-2xl
-              bg-[#111827]
-              text-slate-200
-              border border-white/5
-            ">
-              <p className="text-sm leading-relaxed">
-                Hey! I checked your DevMate profile. Are you building with MERN?
-              </p>
-              <span className="block text-xs text-slate-400 mt-1">
-                10:15 AM
-              </span>
-            </div>
-          </div>  */}
+          
           {messages.map((msg, index) => {
             return (
-              <div className="flex justify-end">
-                <div
-                  className="
-              max-w-md px-4 py-3 rounded-2xl
-              bg-cyan-500/90
-              text-slate-900
-            "
-                >
-                  <p className="text-sm leading-relaxed font-medium">
-                    {msg.text}
-                  </p>
-                  <span className="block text-xs text-slate-800 mt-1 text-right">
-                    {msg.firstName}
-                  </span>
-                </div>
-              </div>
+             <div className={`flex ${user.firstName === msg.firstName ? "justify-end" : "justify-start"} mb-2`}>
+  <div
+    className={`max-w-md px-4 py-3 rounded-2xl ${
+      user.firstName === msg.firstName
+        ? "bg-cyan-500/90 text-slate-900"
+        : "bg-slate-200 text-slate-900"
+    }`}
+  >
+    {/* Show name only for received messages (WhatsApp style) */}
+    {!user.firstName === msg.firstName && (
+      <span className="block text-xs text-slate-600 mb-1">
+        {msg.firstName}
+      </span>
+    )}
+
+    <p className="text-sm leading-relaxed font-medium">
+      {msg.text}
+    </p>
+  </div>
+</div>
             );
           })}
         </div>
