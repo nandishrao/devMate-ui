@@ -12,10 +12,15 @@ const Chat = () => {
   const { toTargetUser } = useParams();
   const [messages, setMessages] = useState([]);
   const [newMessages, setNewMessages] = useState();
+  const [targetUser, setTargetUser] = useState(null);
 
   const fetchMessages = async () => {
     const chat = await axios.get(BASE_URL +"/chats/" + toTargetUser, { withCredentials: true });
-    //console.log(chat.data.messages);
+     const otherUser = chat.data.participants.find(
+    (p) => p._id !== userId
+  );
+
+  setTargetUser(otherUser);
     const chatMessages = chat?.data?.messages?.map((msg) => {
       return {
         firstName: msg.senderId.firstName,
@@ -87,9 +92,9 @@ const Chat = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold text-slate-100">
-              {user?.firstName}
-            </h3>
+           <h3>
+  {targetUser ? `${targetUser.firstName} ${targetUser.lastName}` : "Loading..."}
+</h3>
             <p className="text-xs text-emerald-400">Online</p>
           </div>
         </div>
