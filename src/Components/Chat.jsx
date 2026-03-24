@@ -105,7 +105,6 @@ const Chat = () => {
         : "bg-slate-200 text-slate-900"
     }`}
   >
-    {/* Show name only for received messages (WhatsApp style) */}
     {!user.firstName === msg.firstName && (
       <span className="block text-xs text-slate-600 mb-1">
         {msg.firstName}

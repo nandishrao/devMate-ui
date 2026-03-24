@@ -18,7 +18,6 @@ const NavBar = () => {
   return (
 <div className="navbar bg-gradient-to-r from-slate-900 via-indigo-900 to-sky-900 text-white shadow-xl px-6">
 
-  {/* Logo */}
   <div className="flex-1">
     <Link
       to="/"
@@ -34,7 +33,6 @@ const NavBar = () => {
   {user && (
     <div className="flex items-center gap-5">
 
-      {/* Welcome */}
       <p className="hidden lg:block text-sm text-slate-300">
         Welcome back,{" "}
         <span className="font-semibold text-white">
@@ -42,7 +40,6 @@ const NavBar = () => {
         </span>
       </p>
 
-      {/* Avatar Dropdown */}
       <div className="dropdown dropdown-end">
         <label
           tabIndex={0}
@@ -53,7 +50,6 @@ const NavBar = () => {
           </div>
         </label>
 
-        {/* Dropdown menu */}
         <ul
           tabIndex={0}
           className="menu menu-sm dropdown-content mt-3 w-56 rounded-xl bg-slate-900 text-slate-200 shadow-2xl p-2 z-[100]"
