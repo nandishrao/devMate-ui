@@ -8,8 +8,17 @@ import Profile from "./Components/Profile";
 import Connections from "./Components/Connection";
 import Requests from "./Components/Requests";
 import Premium from "./Components/Premium";
-import PostCard from "./Components/PostCard";
+import Premiumfront from "./Components/Premiunfront";
 import Chat from "./Components/Chat";
+import RoadmapCards from "./Components/Roadmap";
+import MernRoadmap from "./Components/MernRoadmap";
+import AiMlRoadmap from "./Components/AiMl";
+import DevOpsRoadmap from "./Components/Devops";
+import JavaRoadmap from "./Components/JavaRoadmap";
+import DataAnalystRoadmap from "./Components/DataAnalystRoadmap";
+import BackendRoadmap from "./Components/BackendRoadmap";
+import Quiz from "./Components/Quiz";
+// import FrontendRoadmap from "./Components/FrontendRoadmap";
 function App() {
   return (
   <Provider store={appStore}>
@@ -22,7 +31,15 @@ function App() {
               <Route path="/connections" element={<Connections/>} />
               <Route path="/requests" element={<Requests />} />
               <Route path="/premium" element={<Premium/>} />
-              <Route path="/posts" element={<PostCard/>} />
+              <Route path="/premiumfront" element={<Premiumfront/>} />
+              <Route path="/roadmaps" element={<RoadmapCards/>} />
+              <Route path="/roadmaps/mern" element={<MernRoadmap/>} />
+              <Route path="/roadmaps/aiml" element={<AiMlRoadmap/>}/>
+              <Route path="/roadmaps/java" element={<JavaRoadmap />}/>
+              <Route path="/roadmaps/devops" element={<DevOpsRoadmap />} />
+              <Route path="/roadmaps/data-analyst" element={<DataAnalystRoadmap />} />
+              <Route path="/roadmaps/backend" element={<BackendRoadmap />} />
+              <Route path="/quiz" element={<Quiz />} />
               <Route path="/chat/:toTargetUser" element={<Chat/>} />
         </Route>
       </Routes> 
