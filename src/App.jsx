@@ -18,6 +18,9 @@ import JavaRoadmap from "./Components/JavaRoadmap";
 import DataAnalystRoadmap from "./Components/DataAnalystRoadmap";
 import BackendRoadmap from "./Components/BackendRoadmap";
 import Quiz from "./Components/Quiz";
+import BlogSection from "./Components/Blogs";
+import Tasks from "./Components/Todo";
+import ProjectIdeas from "./Components/ProjectIdeas";
 // import FrontendRoadmap from "./Components/FrontendRoadmap";
 function App() {
   return (
@@ -40,7 +43,10 @@ function App() {
               <Route path="/roadmaps/data-analyst" element={<DataAnalystRoadmap />} />
               <Route path="/roadmaps/backend" element={<BackendRoadmap />} />
               <Route path="/quiz" element={<Quiz />} />
+              <Route path="/blogs" element={<BlogSection />} />
+              <Route path="/tasks" element={<Tasks />} />
               <Route path="/chat/:toTargetUser" element={<Chat/>} />
+              <Route path="/projects" element={<ProjectIdeas />} />
         </Route>
       </Routes> 
     </BrowserRouter>
