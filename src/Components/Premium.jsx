@@ -10,7 +10,7 @@ const Premium = () => {
 
   // ✅ Redirect premium users to posts
   if (user?.isPremium) {
-    return <Navigate to="/posts" replace />;
+    return <Navigate to="/premiumfront" replace />;
   }
 
   const handlePayment = async (type) => {
